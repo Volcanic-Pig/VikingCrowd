@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
-
+using VolcanicPig.Mobile;
 
 namespace Game
 {
-	public class CrowdFollower : MonoBehaviour
+	public class CrowdFollower : PooledObjectBase
 	{
 		[SerializeField] private Transform target; 
 
@@ -18,8 +18,11 @@ namespace Game
 
 		private void Start() 
 		{
+			target = GameManager.Instance.GetCurrentPlayer.transform; 
 			_agent = GetComponent<NavMeshAgent>();  	
 		}
+
+		public void SetTarget(Transform target) => this.target = target; 
 
 		private void Update() 
 		{
