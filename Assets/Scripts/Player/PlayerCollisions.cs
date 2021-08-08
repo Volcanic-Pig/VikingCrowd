@@ -6,13 +6,12 @@ namespace Game
 {
 	public class PlayerCollisions : MonoBehaviour
 	{
-		private const string K_Multiplier = "Multiplier"; 
+		private const string K_Gate = "Gate"; 
 		private void OnTriggerEnter(Collider other) 
 		{
-			if(other.CompareTag(K_Multiplier))
+			if(other.CompareTag(K_Gate))
 			{
-				Multiplier mult = other.GetComponent<Multiplier>(); 
-				mult.Multiply(); 
+				
 			}	
 		}
 	}
