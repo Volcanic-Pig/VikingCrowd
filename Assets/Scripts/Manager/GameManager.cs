@@ -16,5 +16,10 @@ namespace Game
             }
 #endif    
         }
+
+        public void PlayerReachedEnd()
+        {
+            EndGame(true);
+        }
     }
 }

@@ -8,6 +8,8 @@ namespace Game
 {
     public class PlayerMovement : MonoBehaviour
     {
+        public bool IsMoving => _canMoveForwards; 
+        
         [SerializeField] private float deltaMultiplier, forwardsSpeed, sideSpeed, minYRot, maxYRot;
 
         private Player _player;
