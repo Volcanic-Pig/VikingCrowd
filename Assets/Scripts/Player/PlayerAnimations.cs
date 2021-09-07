@@ -10,8 +10,9 @@ namespace Game
         [SerializeField] private Animator anim;
 
         private PlayerMovement _movement;
-        
-        private int _kIsMoving = Animator.StringToHash("IsMoving");
+
+        private readonly int _kIsMoving = Animator.StringToHash("IsMoving");
+        private readonly int _kRandomPunch = Animator.StringToHash("RandomPunch");  
 
         private void Start()
         {
@@ -22,6 +23,11 @@ namespace Game
         {
             if (!anim) return;
             anim.SetBool(_kIsMoving, _movement.IsMoving);
+        }
+
+        public void Punch()
+        {
+            anim.SetTrigger(_kRandomPunch);
         }
     }
 }

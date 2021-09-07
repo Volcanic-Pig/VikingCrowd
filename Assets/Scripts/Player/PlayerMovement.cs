@@ -8,7 +8,7 @@ namespace Game
 {
     public class PlayerMovement : MonoBehaviour
     {
-        public bool IsMoving => _canMoveForwards; 
+        public bool IsMoving => _canMoveForwards || _automatedMovementActive; 
         
         [SerializeField] private float deltaMultiplier, forwardsSpeed, sideSpeed, minYRot, maxYRot;
 
@@ -70,6 +70,7 @@ namespace Game
         public void AutomatedMovementToPosition(Transform target, Action onComplete)
         {
             _automatedMovementActive = true;
+            _yRot = 0;
             StartCoroutine(CoAutomatedMovement(target, onComplete));
         }
 

@@ -9,6 +9,7 @@ namespace Game
     public enum PlayerState
     {
         Moving,
+        Activity,
         Fighting,
         End
     }
@@ -30,6 +31,7 @@ namespace Game
 
         private PlayerMovement _movement;
         private PlayerCollisions _collisions;
+        private PlayerAnimations _animations; 
 
         private void OnEnable()
         {
@@ -43,7 +45,8 @@ namespace Game
 
         private void Start() 
         {
-            _movement = GetComponent<PlayerMovement>();     
+            _movement = GetComponent<PlayerMovement>();
+            _animations = GetComponent<PlayerAnimations>(); 
             _collisions = GetComponent<PlayerCollisions>();
         }
 
@@ -58,7 +61,27 @@ namespace Game
                 if(_movement) _movement.SetMovementEnabled(false);
             }
         }
-        
-        public void SetState(PlayerState state) => State = state; 
+
+        public void SetState(PlayerState state)
+        {
+            State = state;
+
+            switch (state)
+            {
+                case PlayerState.Moving:
+                    _movement.SetMovementEnabled(true);
+                    break;
+                
+                case PlayerState.Activity:
+                case PlayerState.End: 
+                    _movement.SetMovementEnabled(false);
+                    break;
+            }
+        }
+
+        public void DoPunch()
+        {
+            _animations.Punch(); 
+        }
     }
 }
