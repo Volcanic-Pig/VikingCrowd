@@ -31,7 +31,10 @@ namespace Game
 
         private PlayerMovement _movement;
         private PlayerCollisions _collisions;
-        private PlayerAnimations _animations; 
+        private PlayerAnimations _animations;
+
+        public Activity GetActivity => _currentActivity; 
+        private Activity _currentActivity; 
 
         private void OnEnable()
         {
@@ -77,6 +80,18 @@ namespace Game
                     _movement.SetMovementEnabled(false);
                     break;
             }
+        }
+
+        public void SetActivity(Activity activity)
+        {
+            _currentActivity = activity; 
+        }
+
+        public void StartCurrentActivity()
+        {
+            if (_currentActivity == null) return; 
+            SetState(PlayerState.Activity);
+            _currentActivity.StartActivity(this);
         }
 
         public void DoPunch(Action finishedPunchCallback)

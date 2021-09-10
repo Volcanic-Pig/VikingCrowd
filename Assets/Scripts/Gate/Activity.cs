@@ -8,7 +8,7 @@ using VolcanicPig.Mobile.Gestures;
 
 namespace Game
 {
-    public class Gate : MonoBehaviour
+    public class Activity : MonoBehaviour
     {
         public UnityEvent OnActivityPerformed;
         public UnityEvent OnActivityLastPerform; 

@@ -9,8 +9,7 @@ namespace Game
 	{
 		private Player _player;
 		private PlayerMovement _movement;
-		private Gate _currentGate;  
-		
+
 		private const string K_Gate = "Gate";
 		private const string K_End = "End";
 
@@ -24,20 +23,16 @@ namespace Game
 		{
 			if(other.CompareTag(K_Gate))
 			{
-				Gate gate = other.GetComponent<Gate>();
-				_player.SetState(PlayerState.Activity);  
-				_currentGate = gate; 
-				_movement.AutomatedMovementToPosition(gate.animStartPos, OnMoveToGateComplete);
+				Activity activity = other.GetComponent<Activity>();
+				
+				// _player.SetState(PlayerState.Activity);  
+				_player.SetActivity(activity);
+				_movement.AutomatedMovementToPosition(activity.animStartPos, _player.StartCurrentActivity);
 			}	
 			else if (other.CompareTag(K_End))
 			{
 				GameManager.Instance.PlayerReachedEnd();
 			}
-		}
-
-		private void OnMoveToGateComplete()
-		{
-			_currentGate.StartActivity(_player);
 		}
 	}
 }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Game
 {
-    public class PunchBagGate : Gate
+    public class PunchBagActivity : Activity
     {
         public override void PerformActivity()
         {
