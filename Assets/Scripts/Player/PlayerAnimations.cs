@@ -8,6 +8,7 @@ namespace Game
     public class PlayerAnimations : MonoBehaviour
     {
         [SerializeField] private Animator anim;
+        [SerializeField] private AlertObservers observers; 
 
         private PlayerMovement _movement;
 
@@ -25,8 +26,13 @@ namespace Game
             anim.SetBool(_kIsMoving, _movement.IsMoving);
         }
 
-        public void Punch()
+        public void Punch(Action finishCallback)
         {
+            if (finishCallback != null)
+            {
+                observers.AddObserver(finishCallback);
+            }
+            
             anim.SetTrigger(_kRandomPunch);
         }
     }

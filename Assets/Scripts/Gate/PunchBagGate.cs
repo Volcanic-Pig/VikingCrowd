@@ -8,8 +8,9 @@ namespace Game
     {
         public override void PerformActivity()
         {
+            if (!_started) return; 
             base.PerformActivity();
-            Player.DoPunch();
+            Player.DoPunch(ActivityPerformed);
         }
     }
 }

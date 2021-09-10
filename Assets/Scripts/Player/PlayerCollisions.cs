@@ -37,7 +37,7 @@ namespace Game
 
 		private void OnMoveToGateComplete()
 		{
-			_currentGate.StartActiviy(_player);
+			_currentGate.StartActivity(_player);
 		}
 	}
 }

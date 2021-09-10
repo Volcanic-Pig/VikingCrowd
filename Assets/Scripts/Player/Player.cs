@@ -79,9 +79,9 @@ namespace Game
             }
         }
 
-        public void DoPunch()
+        public void DoPunch(Action finishedPunchCallback)
         {
-            _animations.Punch(); 
+            _animations.Punch(finishedPunchCallback); 
         }
     }
 }

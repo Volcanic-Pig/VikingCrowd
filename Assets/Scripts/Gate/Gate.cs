@@ -19,7 +19,7 @@ namespace Game
         public float activityHealth;
         public CinemachineVirtualCameraBase activityCamera; 
 
-        private bool _started;
+        protected bool _started;
 
         private void OnEnable()
         {
@@ -31,7 +31,7 @@ namespace Game
             GestureController.OnTouchDown -= OnTouchDown; 
         }
 
-        public void StartActiviy(Player player)
+        public void StartActivity(Player player)
         {
             activityCamera.m_Priority = 10; 
             Player = player;
@@ -55,8 +55,11 @@ namespace Game
 
         public virtual void PerformActivity()
         {
-            if (!_started) return; 
-            
+            if (!_started) return;
+        }
+
+        public virtual void ActivityPerformed()
+        {
             activityHealth -= 1;
             if (activityHealth <= 0)
             {
