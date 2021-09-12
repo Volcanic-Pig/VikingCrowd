@@ -129,25 +129,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7976822b9abe83d498a3eed46da7989c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!95 &8120887520450935708
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 243832873478949987}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &6068942341120193668
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -749,6 +730,42 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6068942341823861026}
     m_Modifications:
+    - target: {fileID: 6111408982315553816, guid: 27faa8ba08e9c7d448578a3660e3044f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.9999998
+      objectReference: {fileID: 0}
+    - target: {fileID: 6111408982315553816, guid: 27faa8ba08e9c7d448578a3660e3044f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 2.0100002
+      objectReference: {fileID: 0}
+    - target: {fileID: 6111408982315553816, guid: 27faa8ba08e9c7d448578a3660e3044f, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.8205314
+      objectReference: {fileID: 0}
+    - target: {fileID: 6111408982315553816, guid: 27faa8ba08e9c7d448578a3660e3044f, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.04785464
+      objectReference: {fileID: 0}
+    - target: {fileID: 6111408982315553816, guid: 27faa8ba08e9c7d448578a3660e3044f, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.56862855
+      objectReference: {fileID: 0}
+    - target: {fileID: 6111408982315553816, guid: 27faa8ba08e9c7d448578a3660e3044f, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.03316328
+      objectReference: {fileID: 0}
+    - target: {fileID: 6271002718176238235, guid: 27faa8ba08e9c7d448578a3660e3044f, type: 3}
+      propertyPath: Velocity.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6271002718176238235, guid: 27faa8ba08e9c7d448578a3660e3044f, type: 3}
+      propertyPath: Velocity.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6271002718176238235, guid: 27faa8ba08e9c7d448578a3660e3044f, type: 3}
+      propertyPath: Velocity.z
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6992843172058311337, guid: 27faa8ba08e9c7d448578a3660e3044f, type: 3}
       propertyPath: m_Name
       value: Gate
@@ -802,10 +819,5 @@ PrefabInstance:
 --- !u!4 &3936159608591611118 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6992843172058311350, guid: 27faa8ba08e9c7d448578a3660e3044f, type: 3}
-  m_PrefabInstance: {fileID: 6317316210855435864}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &243832873478949987 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6109653149983461947, guid: 27faa8ba08e9c7d448578a3660e3044f, type: 3}
   m_PrefabInstance: {fileID: 6317316210855435864}
   m_PrefabAsset: {fileID: 0}

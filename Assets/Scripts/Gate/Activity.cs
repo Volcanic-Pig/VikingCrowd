@@ -17,7 +17,9 @@ namespace Game
         
         public Transform animStartPos;
         public float activityHealth;
-        public CinemachineVirtualCameraBase activityCamera; 
+        public CinemachineVirtualCameraBase activityCamera;
+
+        private bool _canPerform;  
 
         protected bool _started;
 
@@ -36,26 +38,19 @@ namespace Game
             activityCamera.m_Priority = 10; 
             Player = player;
             _started = true;
+            _canPerform = true;
         }
-
-#if UNITY_EDITOR
-        private void Update()
-        {
-            if (Input.GetKeyDown(KeyCode.P))
-            {
-                PerformActivity();
-            }
-        }
-#endif
 
         private void OnTouchDown(Vector2 pos)
         {
+            if (!_canPerform) return; 
             PerformActivity();
         } 
 
         public virtual void PerformActivity()
         {
             if (!_started) return;
+            _canPerform = false; 
         }
 
         public virtual void ActivityPerformed()
@@ -69,6 +64,7 @@ namespace Game
             else
             {
                 OnActivityPerformed?.Invoke();
+                _canPerform = true;
             }
         }
 

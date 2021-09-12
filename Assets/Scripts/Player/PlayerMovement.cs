@@ -84,6 +84,9 @@ namespace Game
                 yield return null;
             }
 
+            transform.position = target.position;
+            transform.rotation = target.rotation; 
+            
             _automatedMovementActive = false;
             if (onComplete != null) onComplete?.Invoke();
         }

@@ -17,9 +17,10 @@ namespace Game
         {
             foreach (Action action in _callbacks)
             {
-                _callbacks.Remove(action); 
                 action?.Invoke();
             }
+            
+            _callbacks.Clear();
         }
 
         public void ClearObservers()

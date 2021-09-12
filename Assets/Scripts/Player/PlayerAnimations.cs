@@ -12,8 +12,11 @@ namespace Game
 
         private PlayerMovement _movement;
 
+        private int _punchIndex; 
+        
         private readonly int _kIsMoving = Animator.StringToHash("IsMoving");
         private readonly int _kRandomPunch = Animator.StringToHash("RandomPunch");  
+        private readonly int _kRandomPunchIndex = Animator.StringToHash("RandomPunchIndex");  
 
         private void Start()
         {
@@ -34,6 +37,17 @@ namespace Game
             }
             
             anim.SetTrigger(_kRandomPunch);
+
+            if (_punchIndex == 0)
+            {
+                _punchIndex++;
+            }
+            else
+            {
+                _punchIndex = 0;
+            }
+            
+            anim.SetInteger(_kRandomPunchIndex, _punchIndex);
         }
     }
 }
